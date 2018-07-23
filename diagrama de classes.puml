@@ -1,0 +1,19 @@
+@startuml
+ class partida{
+Jogadores1/2
+Tabuleiro
+Se jogador1 ou jogador2 ganhou, empate
+}
+class tabuleiro{
+Imprime tabuleiro
+Verifica linha, colunas, diagonais
+}
+class jogador{
+Realizar jogada
+Verifica se pode jogar
+
+}
+
+partida --> tabuleiro: A
+partida --> jogador : B
+@enduml

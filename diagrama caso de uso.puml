@@ -1,0 +1,23 @@
+@startuml
+
+:jogadores: -left-> (analisar tabuleiro)
+:jogadores: -right-> (realizar jogadas)
+:jogadores: -up-> (verificar se pode jogar na determinada posição)
+:jogadores: -down-> (verificar se formou a linha, coluna ou diagonal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
