@@ -6,7 +6,7 @@ public abstract class  Partida {
 
 
     protected  boolean verificaPosicaoValida(int valor) {
-        if (!(valor == 9) && !(valor == 0)) {
+        if (!(valor == -1) && !(valor == 0)) {
             return true;
         } else {
             System.out.println("posição invalida");
