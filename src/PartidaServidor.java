@@ -67,10 +67,13 @@ public class PartidaServidor extends Partida {
                 saidaCliente.writeBytes(tabuleiroAtual + "\n");
 
                 tabuleiroAtual = entradaCliente.readLine();
-                System.out.println("Tabuleiro atual" + tabuleiroAtual);
                 tabuleiro.atualizarTabuleiro(tabuleiroAtual);
+
+
+
                 vez ++;
             }
+
         }
     }
 }

@@ -35,7 +35,7 @@ public class PartidaCliente extends Partida {
         Socket socketCliente = new Socket(host, porta);
         System.out.println("Conectado...");
 
-        System.out.println("Criando cadeias...");
+        System.out.println("Começando...");
 
         BufferedReader entradaServidor = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
         DataOutputStream saidaServidor = new DataOutputStream(socketCliente.getOutputStream());
@@ -46,6 +46,7 @@ public class PartidaCliente extends Partida {
 
             tabuleiroAtual = entradaServidor.readLine();
             tabuleiro.atualizarTabuleiro(tabuleiroAtual);
+            tabuleiro.imprimeTabuleiro();
 
             System.out.println("escolha uma posição no tabuleiro");
             int posicao = entrada.nextInt();
@@ -59,11 +60,12 @@ public class PartidaCliente extends Partida {
 
             tabuleiroAtual = tabuleiro.mostraTabuleiro();
 
-            System.out.println("antes de enviar");
             saidaServidor.writeBytes(tabuleiroAtual+ "\n");
-            System.out.println("depois de enviar");
+
 
             vez++;
         }
+
+        }
     }
-}
+

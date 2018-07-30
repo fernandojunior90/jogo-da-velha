@@ -23,7 +23,7 @@ public class Tabuleiro {
                 mostraTabuleiro += matriz[i][j];
             }
         }
-        imprimeTabuleiro();
+        //imprimeTabuleiro();
         return mostraTabuleiro;
     }
 
@@ -31,11 +31,15 @@ public class Tabuleiro {
         int cont = 0;
         for (int i = 0; i < 3; i++){
             for (int j = 0; j <3; j++){
-                matriz[i][j] = String.valueOf(situacao.charAt(cont));
-                cont++;
+                if(String.valueOf(situacao.charAt(cont)).equals("-")) {
+                    matriz[i][j] = "-1";
+                    cont = cont+2;
+                } else {
+                    matriz[i][j] = String.valueOf(situacao.charAt(cont));
+                    cont++;
+                }
             }
         }
-        imprimeTabuleiro();
 
     }
 
@@ -63,7 +67,7 @@ public class Tabuleiro {
             }
 
         }
-      return 10;
+        return 10;
     }
     public int verificaDiagonal(){
         if(Integer.parseInt(matriz[0][0]) + Integer.parseInt(matriz[1][1]) + Integer.parseInt(matriz[2][2]) == -3){
